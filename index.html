@@ -1404,16 +1404,25 @@ state.items.forEach(item => {
   if (item.type === 'text') {
 
     tableBody.push([
-      {
-        content: item.description || '',
-        colSpan: pdfHead.length,
-        styles: {
-          fontStyle: 'normal',
-          fillColor: [255,255,255],
-          textColor: [71,85,105]
-        }
+  {
+    content: item.description || '',
+    colSpan: pdfHead.length,
+    styles: {
+      fontStyle: 'normal',
+      fillColor: [255,255,255],
+      textColor: [71,85,105],
+
+      halign: 'left',
+      overflow: 'linebreak',
+      cellPadding: {
+        top: 4,
+        bottom: 4,
+        left: 5,
+        right: 5
       }
-    ])
+    }
+  }
+])
 
     return
   }
